@@ -1,10 +1,12 @@
 server:
-  port: 8001
+  port: 5000
+  servlet:
+    context-path: /uaa
 spring:
   data:
     mongodb:
       host: localhost
-      database: table
+      database: user
       port: 27017
 eureka:
   instance:
@@ -12,7 +14,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://auth-service:5000/uaa/users/current
