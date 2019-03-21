@@ -36,6 +36,7 @@
     <modules>
         <module>config-service</module>
         <module>eureka-service</module>
+        <module>table-service</module>
     </modules>
 
 </project>

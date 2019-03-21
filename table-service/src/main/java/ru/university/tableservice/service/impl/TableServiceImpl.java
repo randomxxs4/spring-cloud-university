@@ -7,6 +7,8 @@ import ru.university.tableservice.entity.Table;
 import ru.university.tableservice.repository.TableRepository;
 import ru.university.tableservice.service.TableService;
 
+import java.util.Collection;
+
 @Service
 public class TableServiceImpl implements TableService {
 
@@ -23,7 +25,7 @@ public class TableServiceImpl implements TableService {
     }
 
     @Override
-    public Iterable<Table> findAll() {
+    public Collection<Table> getAll() {
         return tableRepository.findAll();
     }
 

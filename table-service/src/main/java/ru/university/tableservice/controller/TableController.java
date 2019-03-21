@@ -1,9 +1,12 @@
 package ru.university.tableservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.university.tableservice.entity.Table;
 import ru.university.tableservice.service.TableService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/tables")
@@ -16,4 +19,13 @@ public class TableController {
         this.tableService = tableService;
     }
 
+    @PostMapping
+    public void createTable(@RequestBody Table table) {
+        tableService.save(table);
+    }
+
+    @GetMapping(value = "/all")
+    public List<Table> getAll() {
+        return new ArrayList<>(tableService.getAll());
+    }
 }
